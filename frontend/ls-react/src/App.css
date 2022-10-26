@@ -1,0 +1,24 @@
+:root {
+  --red: #a80000;
+  --white: #ffffff;
+  --alto: #dddddd;
+  --tundora: #444444;
+  --silver: #c0c0c0;
+  --mine-shaft: #333333;
+  --gray: #8b8b8b;
+
+  --spacing-xxxs: 4px;
+  --spacing-xxs: 8px;
+  --spacing-xs: 16px;
+  --spacing-sm: 24px;
+  --spacing-md: 32px;
+  --spacing-lg: 48px;
+}
+
+@font-face {
+  font-family: "helvetica-narrowbold";
+  src: url("../public/fonts/helvetica_narrow_bold-webfont.woff2") format("woff2"),
+    url("../public/fonts/helvetica_narrow_bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

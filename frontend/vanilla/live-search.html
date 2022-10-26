@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/live-search.css" />
+    <title>Live Search</title>
+  </head>
+  <body>
+    <div id="live-search">
+      <div class="padding-md margin-botton-md primary">
+        <div class="position-relative">
+          <span class="ico-mglass"></span>
+          <form class="position-relative" method="get" action="http://g1.globo.com/busca/">
+            <input
+            id="search"
+            class="input-field"
+            type="search"
+            placeholder="Buscar"
+            data-type="search"
+            autocomplete="off"
+            name="q"
+          />
+          <div class="word-suggestion">
+          </div>
+          </form>
+          <div class="suggestion">
+                <div class="suggestion-header">
+                    <a class="suggestion-header-link" href="#" title="">
+                        <img class="suggestion-icon" src="./images/icon-g1.png" alt="ícone g1">
+                        <h2 class="suggestion-title"></h2>
+                    </a>
+                </div>
+                <div class="suggestion-body">
+                    <span>Sugestão de busca</span>
+                    <ul class="suggestion-search">
+                    </ul>
+                </div>
+                <div class="suggestion-footer">
+                    <ul>
+                        <li>
+                            <a class="search-globo" href="http://g1.globo.com/busca/?q=" title="buscar na Globo.com">
+                              buscar <span class="search-word"></span> na Globo.com &#x203A;
+                            </a>
+                        </li>
+                        <li>
+                          <a class="search-web" href="https://www.google.com/search?q=" title="buscar na Web">
+                            buscar <span class="search-word"></span> na Web &#x203A;
+                          </a>
+                        </li>                        
+                    </ul>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

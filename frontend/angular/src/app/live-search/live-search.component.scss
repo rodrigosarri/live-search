@@ -1,0 +1,212 @@
+$red: #a80000;
+$white: #ffffff;
+$alto: #dddddd;
+$tundora: #444444;
+$silver: #c0c0c0;
+$mine-shaft: #333333;
+$gray: #8b8b8b;
+
+$spacing-xxxs: 4px;
+$spacing-xxs: 8px;
+$spacing-xs: 16px;
+$spacing-sm: 24px;
+$spacing-md: 32px;
+$spacing-lg: 48px;
+
+@font-face {
+  font-family: "helvetica-narrowbold";
+  src: url("/assets/fonts/helvetica_narrow_bold-webfont.woff2") format("woff2"),
+    url("/assets/fonts/helvetica_narrow_bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+#live-search {
+  .primary {
+    background-color: $red;
+    padding: $spacing-xs $spacing-md;
+  }
+
+  .position-relative {
+    position: relative;
+  }
+
+  input[type="search"]#search {
+    font-family: "helvetica-narrowbold";
+    min-height: $spacing-md;
+    border: 0 none;
+    border-radius: $spacing-xxxs;
+    min-width: 100%;
+    padding: $spacing-xxxs $spacing-md;
+    box-sizing: border-box;
+    font-size: 14px;
+
+    &:focus {
+      outline-width: 0;
+      outline: none;
+    }
+  }
+
+  .word-suggestion {
+    font-family: "helvetica-narrowbold";
+    font-size: 14px;
+    position: absolute;
+    left: 32px;
+    top: 8px;
+    color: $gray;
+    display: flex;
+
+    span {
+      display: flex;
+
+      &.invisible {
+        opacity: 0;
+      }
+    }
+  }
+
+  .margin-botton-md {
+    margin-bottom: $spacing-md;
+  }
+
+  .ico-mglass {
+    position: absolute;
+    display: inline-block;
+    background: $white;
+    border-radius: 30px;
+    height: $spacing-xxs;
+    width: $spacing-xxs;
+    border: 2px solid $mine-shaft;
+    top: $spacing-xxs;
+    left: $spacing-xxs;
+
+    &:after {
+      content: "";
+      height: 2px;
+      width: $spacing-xxs;
+      background: $mine-shaft;
+      position: absolute;
+      top: 10px;
+      left: 7px;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+    }
+  }
+
+  .suggestion {
+    border-radius: $spacing-xxxs;
+    box-shadow: 1px 1px $spacing-xxs 0px rgba(198, 198, 198, 0.75);
+    position: absolute;
+    background: $white;
+    min-width: 100%;
+    margin-top: $spacing-xs;
+    padding: $spacing-xs 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -12px;
+      border-bottom: 12px solid $white;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      left: calc(50% - 10px);
+    }
+
+    > div {
+      padding: $spacing-xxs;
+      border-bottom: solid 1px $alto;
+      display: flex;
+      flex-direction: column;
+
+      &:first-child {
+        padding: $spacing-xs $spacing-xxs;
+      }
+    }
+  }
+
+  .suggestion-header {
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: 100%;
+      margin-right: $spacing-xs;
+    }
+
+    h2 {
+      margin: 0;
+      font-family: "helvetica-narrowbold";
+      color: $tundora;
+      font-size: 18px;
+    }
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+    margin: $spacing-xxs 0;
+  }
+
+  .suggestion-body {
+    > span {
+      margin-left: auto;
+      color: $silver;
+      font-style: italic;
+    }
+
+    li {
+      color: $mine-shaft;
+      padding: $spacing-xxxs 0;
+
+      a {
+        color: $mine-shaft;
+        text-decoration: none;
+
+        &:active,
+        &:visited {
+          color: $mine-shaft;
+        }
+      }
+    }
+  }
+
+  .suggestion-search {
+    li {
+      &:hover,
+      &.active {
+        background-color: $alto;
+      }
+    }
+  }
+
+  .suggestion-footer {
+    li {
+      border-bottom: solid 1px $alto;
+
+      a {
+        color: $gray;
+        text-decoration: none;
+        padding: $spacing-xxs 0;
+        display: inline-block;
+
+        span {
+          color: $mine-shaft;
+        }
+      }
+
+      &:last-child {
+        border-bottom: 0 none;
+      }
+    }
+  }
+}

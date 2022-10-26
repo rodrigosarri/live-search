@@ -1,0 +1,204 @@
+:root {
+  --red: #a80000;
+  --white: #ffffff;
+  --alto: #dddddd;
+  --tundora: #444444;
+  --silver: #c0c0c0;
+  --mine-shaft: #333333;
+  --gray: #8b8b8b;
+
+  --spacing-xxxs: 4px;
+  --spacing-xxs: 8px;
+  --spacing-xs: 16px;
+  --spacing-sm: 24px;
+  --spacing-md: 32px;
+  --spacing-lg: 48px;
+}
+
+@font-face {
+  font-family: "helvetica-narrowbold";
+  src: url("./../fonts/helvetica_narrow_bold-webfont.woff2") format("woff2"),
+    url("./../fonts/helvetica_narrow_bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+#live-search .primary {
+  background-color: var(--red);
+  padding: var(--spacing-xs) var(--spacing-md);
+}
+
+#live-search .position-relative {
+  position: relative;
+}
+
+#live-search .opacity-0 {
+  opacity: 0;
+}
+
+#live-search input[type="search"]#search {
+  font-family: "helvetica-narrowbold";
+  min-height: var(--spacing-md);
+  border: 0 none;
+  border-radius: var(--spacing-xxxs);
+  min-width: 100%;
+  padding: var(--spacing-xxxs) var(--spacing-md);
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+#live-search .word-suggestion {
+  font-family: "helvetica-narrowbold";
+  font-size: 14px;
+  position: absolute;
+  left: 32px;
+  top: 8px;
+  color: var(--gray);
+  display: none;
+}
+
+#live-search .word-suggestion span {
+  display: flex;
+}
+
+#live-search input[type="search"]#search:focus {
+  outline-width: 0;
+  outline: none;
+}
+
+#live-search .margin-botton-md {
+  margin-bottom: var(--spacing-md);
+}
+
+#live-search .ico-mglass {
+  position: absolute;
+  display: inline-block;
+  background: var(--white);
+  border-radius: 30px;
+  height: var(--spacing-xxs);
+  width: var(--spacing-xxs);
+  border: 2px solid var(--mine-shaft);
+  top: var(--spacing-xxs);
+  left: var(--spacing-xxs);
+}
+
+#live-search .ico-mglass:after {
+  content: "";
+  height: 2px;
+  width: var(--spacing-xxs);
+  background: var(--mine-shaft);
+  position: absolute;
+  top: 10px;
+  left: 7px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+
+#live-search .suggestion {
+  border-radius: var(--spacing-xxxs);
+  box-shadow: 1px 1px var(--spacing-xxs) 0px rgba(198, 198, 198, 0.75);
+  position: absolute;
+  background: var(--white);
+  min-width: 100%;
+  margin-top: var(--spacing-xs);
+  padding: var(--spacing-xs) 0;
+  box-sizing: border-box;
+  display: none;
+  flex-direction: column;
+}
+
+#live-search .suggestion:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -12px;
+  border-bottom: 12px solid var(--white);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  left: calc(50% - 10px);
+}
+
+#live-search .suggestion > div {
+  padding: var(--spacing-xxs);
+  border-bottom: solid 1px var(--alto);
+  display: none;
+  flex-direction: column;
+}
+
+#live-search div.flex {
+  display: flex;
+}
+
+#live-search .suggestion > div:first-child {
+  padding: var(--spacing-xs) var(--spacing-xxs);
+}
+
+#live-search .suggestion-header a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+#live-search .suggestion-header img {
+  max-width: 100%;
+  height: 100%;
+  margin-right: var(--spacing-xs);
+}
+
+#live-search .suggestion-header h2 {
+  margin: 0;
+  font-family: "helvetica-narrowbold";
+  color: var(--tundora);
+  font-size: 18px;
+}
+
+#live-search .suggestion-body > span {
+  margin-left: auto;
+  color: var(--silver);
+  font-style: italic;
+}
+
+#live-search ul {
+  padding: 0;
+  list-style: none;
+  margin: var(--spacing-xxs) 0;
+}
+
+#live-search .suggestion-body li {
+  color: var(--mine-shaft);
+  padding: var(--spacing-xxxs) 0;
+}
+
+#live-search .suggestion-search li:hover,
+#live-search .suggestion-search li.active {
+  background-color: var(--alto);
+}
+
+#live-search .suggestion-search a,
+#live-search .suggestion-search a:active,
+#live-search .suggestion-search a:visited {
+  color: var(--mine-shaft);
+  text-decoration: none;
+  display: inline;
+}
+
+#live-search .suggestion-footer li {
+  border-bottom: solid 1px var(--alto);
+}
+
+#live-search .suggestion-footer li:last-child {
+  border-bottom: 0 none;
+}
+
+#live-search .suggestion-footer a {
+  color: var(--gray);
+  text-decoration: none;
+  padding: var(--spacing-xxs) 0;
+  display: inline-block;
+}
+
+#live-search .suggestion-footer span {
+  color: var(--mine-shaft);
+}

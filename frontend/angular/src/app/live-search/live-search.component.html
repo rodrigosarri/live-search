@@ -1,0 +1,53 @@
+<div id="live-search">
+  <div class="padding-md margin-botton-md primary">
+    <div class="position-relative">
+      <span class="ico-mglass"></span>
+      <form method="get" class="position-relative" action="http://g1.globo.com/busca/">
+        <input
+        id="search"
+        class="input-field"
+        type="search"
+        placeholder="Buscar"
+        data-type="search"
+        autocomplete="off"
+        name="q"
+        [value]="value"
+        (keyup)="getSuggestions($event)"
+      />
+      <div class="word-suggestion" *ngIf="showWordSuggestion">
+        <span *ngFor="let letter of letters" [class.invisible]="!letter.visible">{{ letter.label }}</span>
+      </div>
+      </form>
+      <div class="suggestion" *ngIf="showSuggestion">
+            <div class="suggestion-header" *ngIf="showSuggestionHeader">
+                <a class="suggestion-header-link" [href]="header.href" [title]="header.title">
+                    <img class="suggestion-icon" [src]="header.src" [alt]="header.title">
+                    <h2 class="suggestion-title">{{ header.title }}</h2>
+                </a>
+            </div>
+            <div class="suggestion-body" *ngIf="showSuggestionBody">
+                <span>Sugestão de busca</span>
+                <ul class="suggestion-search">
+                  <li *ngFor="let item of this.suggestionArray" [class.active]="item.active">
+                    <a href="http://g1.globo.com/busca/?q={{ removeHTML(item.title) }}" [innerHTML]="item.title"></a>
+                  </li>
+                </ul>
+            </div>
+            <div class="suggestion-footer">
+                <ul>
+                    <li>
+                        <a class="search-globo" href="http://g1.globo.com/busca/?q={{ value }}" title="buscar na Globo.com">
+                          buscar <span class="search-word">'{{ value }}'</span> na Globo.com &#x203A;
+                        </a>
+                    </li>
+                    <li>
+                      <a class="search-web" href="https://www.google.com/search?q={{ value }}" title="buscar na Web">
+                        buscar <span class="search-word">'{{ value }}'</span> na Web &#x203A;
+                      </a>
+                    </li>
+                </ul>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
